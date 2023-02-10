@@ -1,49 +1,37 @@
 <img align="right" src="https://github.com/ada-school/module-template/blob/main/ada.png">
 
-## Codelab 🧪 Implementing a REST API Service
+## Configurando Swagger y la documentación de Api REST
 
-Implement different REST API Services to support a store products management system, implementing each CRUD Operation
-with Pagination for each service (Users and Products):
+Para iniciar con la configuración de Swagger, importamos la siguiente dependencia
 
-- Create
-- Read
-- Update
-- Delete
+```
+implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
+implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+```
 
-👉 Aim to reach the [Glory of Rest](https://martinfowler.com/articles/richardsonMaturityModel.html).
+Despues de esto actualizamos la versión del siguiente plugin
 
-👉 Use the correct methods and status codes
-of [HTTP Protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP).
+```
+id 'org.springframework.boot' version '2.6.2'
+```
 
-👉 It should have at least have
-the [Level 2 - HTTP Verbs of Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html).
+En aplication.properties, agregamos las siguientes lines
 
-**Programming Language**:- Java.
+```
+springdoc.swagger-ui.path=/swagger-ui.html
+springdoc.api-docs.path=/api-docs
+```
 
-**Framework:** Spring Boot.
+Hecho esto, ya podemos revisar la documentación y swagger con los siquientes links:
 
-**Database:** MongoDB.
+ * [Swagger](http://localhost:8080/swagger-ui/index.html#/).
+ ```
+ http://localhost:8080/swagger-ui/index.html#/
+ ```
+ ![image](https://user-images.githubusercontent.com/90571387/217974304-61153b50-5fb5-403a-8cb0-24b111d62870.png)
 
-**Learning Objectives**
-
-- [ ]  Use the Richardson Maturity Model to implement a REST API Service.
-- [ ]  Implement a REST API Service using Spring Boot.
-- [ ]  Implement CRUD Operations.
-
-## Detail Orientation 🤹🏽
-
-Good code is about details. Follow each step carefully and make sure your code is clean and readable.
-
-**Main Topics**
-
-* Microservices.
-* REST API.
-* MongoDB.
-* Java.
-* Spring Boot.
-
-## Codelab 🧪
-
-🗣️ "I hear and I forget I see and I remember I do and I understand." Confucius
-
-
+ * [Api Docs](http://localhost:8080/api-docs).
+ ```
+ http://localhost:8080/api-docs
+ ```
+ ![image](https://user-images.githubusercontent.com/90571387/217974470-95b38abd-9da5-4865-b043-3c015172af52.png)
